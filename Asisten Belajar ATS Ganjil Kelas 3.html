@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asisten Belajar ATS Ganjil Kelas 3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef4f4;--card:#fff;--tx:#17282b;--mut:#587075;--pri:#0f6b73;--pri2:#e6f3f3;--ok:#178a4a;--okb:#e3f6ea;--bad:#c5342b;--badb:#fdeae8;--warn:#c98a00;--bd:#cfdcde}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e191b;--card:#16262a;--tx:#e6f0f1;--mut:#9db6ba;--pri:#4fc3cc;--pri2:#173b40;--ok:#4cd082;--okb:#123524;--bad:#ff7d73;--badb:#3d1c1a;--warn:#f0b73a;--bd:#2a4145}}
+:root[data-theme="dark"]{--bg:#0e191b;--card:#16262a;--tx:#e6f0f1;--mut:#9db6ba;--pri:#4fc3cc;--pri2:#173b40;--ok:#4cd082;--okb:#123524;--bad:#ff7d73;--badb:#3d1c1a;--warn:#f0b73a;--bd:#2a4145}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 18px/1.55 Nunito,system-ui,Segoe UI,Arial,sans-serif}
+#app{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:26px;margin:8px 0 2px;line-height:1.2}h2{font-size:19px;margin:0 0 10px}
+small{display:block;color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:12px 0}
+button{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:10px 14px;min-height:48px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+input{font:inherit;width:100%;min-height:48px;padding:8px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);margin-top:4px}
+.seg{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.seg button{flex:1;min-width:200px}
+.seg .on{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:700}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--bd)}
+.row:first-of-type{border-top:0}
+.go{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:700}
+.soon{color:var(--mut);font-size:14px;border:1px dashed var(--bd);border-radius:8px;padding:6px 10px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--pri);color:#fff;border-radius:14px;padding:12px 16px}
+.bar small{color:#dff}.tm{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.pal{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.pal button{width:44px;min-height:44px;padding:0;font-weight:700}
+.pal .ans{background:var(--pri2);border-color:var(--pri)}.pal .flag{background:var(--warn);color:#000;border-color:var(--warn)}.pal .cur{outline:3px solid var(--tx);outline-offset:1px}
+.a2{font:400 28px/1.8 "Noto Naskh Arabic","Amiri",serif}
+.q{font-size:21px;font-weight:700;margin:8px 0 14px}
+.ar{display:block;font:400 34px/2 "Noto Naskh Arabic","Amiri",serif;text-align:center;margin:6px 0;direction:rtl}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;margin:8px 0;min-height:56px}
+.opt i{font-style:normal;font-weight:800;min-width:34px;height:34px;border-radius:50%;background:var(--pri2);color:var(--pri);display:grid;place-items:center}
+.opt.sel{border:2px solid var(--pri);background:var(--pri2)}
+.opt.ok{border:2px solid var(--ok);background:var(--okb);color:var(--tx);opacity:1}
+.opt.bad{border:2px solid var(--bad);background:var(--badb);color:var(--tx);opacity:1}
+.fb{border-radius:10px;padding:10px 14px;margin-top:10px}.fb.ok{background:var(--okb)}.fb.bad{background:var(--badb)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.nav button{flex:1}
+.ask{border:2px solid var(--warn);background:var(--card);border-radius:14px;padding:14px;margin:12px 0}
+.score{font-size:64px;font-weight:800;color:var(--pri);line-height:1}
+.m{margin:8px 0}.m div{height:12px;background:var(--pri2);border-radius:6px;overflow:hidden}.m span{display:block;height:100%;background:var(--ok)}
+.rv{border-top:1px solid var(--bd);padding:12px 0}.tag{font-weight:800}.tag.ok{color:var(--ok)}.tag.bad{color:var(--bad)}
+@media print{button,.nav{display:none}}
+@media(max-width:480px){body{font-size:17px}.score{font-size:52px}}
+</style></head><body><main id="app"></main>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const AR='<span class="ar" lang="ar" dir="rtl">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ</span>';
+/* Jadwal ATS: hari, [kunci, mata pelajaran, jam] */
+const SCHED=[["Kamis, 1 Okt 2026",[["pai","Pendidikan Agama Islam & Budi Pekerti","07.00–09.00"],["pjok","PJOK","09.30–11.30"]]],
+["Jumat, 2 Okt 2026",[["pancasila","Pendidikan Pancasila","07.00–08.30"],["jawa","Bahasa Jawa","09.00–10.30"]]],
+["Sabtu, 3 Okt 2026",[["indo","Bahasa Indonesia","07.00–09.00"],["inggris","Bahasa Inggris","09.30–11.30"]]],
+["Senin, 5 Okt 2026",[["mtk","Matematika","07.00–09.00"],["gsm","GSM/GSMK","09.30–11.30"]]],
+["Selasa, 6 Okt 2026",[["ipas","IPAS","07.00–09.00"],["seni","Seni dan Budaya (Seni Rupa)","09.30–11.30"]]]];
+const MPN={};SCHED.forEach(d=>d[1].forEach(x=>MPN[x[0]]=x[1]));
+/* Bank soal: o[0] = jawaban benar (opsi diacak otomatis saat ujian) */
+const R=t=>'<span class="a2" lang="ar" dir="rtl">'+t+'</span>',F="Q.S. Al-Falaq",K="Mengenal Allah Swt.",B="Berbakti & Menghormati",L="Gerak Lokomotor",N="Gerak Non-Lokomotor",M="Gerak Manipulatif",D="Gerak Dominan Senam";
+const BANK={
+pai:[
+{n:1,m:F,q:"Surah yang artinya “Waktu Subuh” adalah Q.S. …",o:["Al-Falaq","An-Nas","Al-Ikhlas","Al-Kafirun"],e:"Al-Falaq berarti waktu subuh."},
+{n:2,m:F,q:"Jumlah ayat dalam Q.S. Al-Falaq adalah …",o:["5","4","6","7"],e:"Q.S. Al-Falaq terdiri dari 5 ayat."},
+{n:3,m:F,q:"Ayat kelima Q.S. Al-Falaq berbunyi …",o:[R("وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ"),R("وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ"),R("وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ"),R("مِنْ شَرِّ مَا خَلَقَ")],e:"Ayat 5 tentang kejahatan orang yang dengki."},
+{n:4,m:F,q:"Ayat pertama Q.S. Al-Falaq berbunyi …",o:[R("قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ"),R("قُلْ أَعُوذُ بِرَبِّ النَّاسِ"),R("قُلْ هُوَ اللَّهُ أَحَدٌ"),R("إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ")],e:"Ayat pertama: Qul a‘ūdzu birabbil-falaq."},
+{n:5,m:F,q:"Kata “Al-Falaq” dalam Al-Qur’an berarti …",o:["waktu subuh (fajar)","malam gelap","manusia","bumi"],e:"Al-Falaq = waktu subuh (fajar)."},
+{n:6,m:F,q:"Secara umum, Q.S. Al-Falaq berisi permohonan …",o:["perlindungan kepada Allah dari berbagai kejahatan","rezeki yang banyak","kesembuhan dari sakit","ampunan untuk orang tua"],e:"Surah ini doa memohon perlindungan kepada Allah."},
+{n:7,m:F,q:"Arti dari "+AR+" adalah …",o:["Katakanlah, aku berlindung kepada Tuhan yang menguasai subuh","Katakanlah, Dialah Allah Yang Maha Esa","Katakanlah, aku berlindung kepada Tuhan manusia","Katakanlah, wahai orang-orang kafir"],e:"Ini ayat pertama Al-Falaq."},
+{n:8,m:F,q:"Ayat kedua Q.S. Al-Falaq bermakna berlindung dari kejahatan …",o:["makhluk yang diciptakan Allah","malam yang gelap","tukang sihir","orang yang dengki"],e:"Ayat 2: dari kejahatan makhluk-Nya."},
+{n:9,m:F,q:"Berlindung dari kejahatan malam apabila telah gelap gulita terdapat pada ayat ke …",o:["3","1","2","5"],e:"Ayat 3 tentang kejahatan malam gelap gulita."},
+{n:10,m:F,q:"Berlindung dari kejahatan tukang sihir yang meniup pada buhul-buhul terdapat pada ayat ke …",o:["4","2","3","5"],e:"Ayat 4 tentang tukang sihir."},
+{n:11,m:F,q:"Ayat kelima Q.S. Al-Falaq berisi perlindungan dari kejahatan …",o:["orang yang dengki","tukang sihir","malam yang gelap","orang yang malas"],e:"Ayat 5: kejahatan orang yang dengki."},
+{n:12,m:F,q:"Kita dianjurkan membaca Q.S. Al-Falaq karena surah ini adalah doa …",o:["memohon perlindungan kepada Allah","meminta harta","meminta juara kelas","meminta hujan"],e:"Al-Falaq dibaca untuk memohon perlindungan Allah."},
+{n:13,m:K,q:"Ali yakin Allah Maha Pemberi. Perilaku yang mencerminkan imannya adalah …",o:["bersyukur dan berdoa memohon kepada Allah","meminta pada batu keramat","tidak pernah berdoa","menyombongkan diri"],e:"Iman kepada Asmaul Husna terlihat dari syukur dan doa."},
+{n:14,m:K,q:"Sifat wajib bagi Allah adalah sifat yang …",o:["pasti dimiliki Allah","tidak mungkin dimiliki Allah","boleh dimiliki atau tidak","dimiliki manusia saja"],e:"Sifat wajib pasti ada pada Allah."},
+{n:15,m:K,q:"Yang termasuk sifat wajib Allah adalah …",o:["Wujud","Adam","Huduts","Fana’"],e:"Wujud = ada. Lainnya sifat mustahil."},
+{n:16,m:K,q:"Sifat wajib Allah yang artinya “Ada” adalah …",o:["Wujud","Qidam","Baqa’","Adam"],e:"Wujud artinya ada. Adam (tidak ada) sifat mustahil."},
+{n:17,m:K,q:"Allah tidak pernah binasa dan ada selamanya. Ini menunjukkan sifat wajib …",o:["Baqa’","Wujud","Qidam","Huduts"],e:"Baqa’ artinya kekal."},
+{n:18,m:K,q:"Sifat mustahil bagi Allah artinya sifat yang …",o:["tidak mungkin dimiliki Allah","pasti dimiliki Allah","boleh dimiliki Allah","dimiliki makhluk saja"],e:"Mustahil = tidak mungkin ada pada Allah."},
+{n:19,m:K,q:"Yang termasuk sifat mustahil bagi Allah adalah …",o:["Adam (tidak ada)","Wujud","Qidam","Baqa’"],e:"Adam (tidak ada) mustahil bagi Allah."},
+{n:20,m:K,q:"Sifat mustahil Allah yang artinya “Baru” adalah …",o:["Huduts","Adam","Fana’","Ajzun"],e:"Huduts = baru, lawan dari Qidam."},
+{n:21,m:K,q:"Pernyataan yang menunjukkan sifat wajib Allah adalah …",o:["Allah selalu ada","Allah bisa binasa","Allah itu lemah","Allah berawal dari tidak ada"],e:"Yang lain adalah sifat mustahil."},
+{n:22,m:K,q:"Sifat jaiz bagi Allah artinya Allah … melakukan sesuatu atau tidak melakukannya.",o:["boleh","wajib","mustahil","tidak mampu"],e:"Jaiz = boleh (sesuai kehendak Allah)."},
+{n:23,m:K,q:"Contoh sifat jaiz Allah adalah …",o:["Allah boleh memberi rezeki banyak atau sedikit","Allah pasti ada","Allah tidak mungkin lemah","Allah kekal"],e:"Memberi rezeki banyak/sedikit adalah kehendak Allah (jaiz)."},
+{n:24,m:K,q:"Hujan turun di suatu daerah, tetapi di daerah lain tidak. Peristiwa ini menunjukkan sifat …",o:["jaiz Allah","mustahil Allah","wajib manusia","lemah Allah"],e:"Allah boleh menurunkan hujan atau tidak."},
+{n:25,m:B,q:"Berbakti kepada orang tua artinya …",o:["taat, hormat, dan menyayangi orang tua","menuruti keinginan sendiri","melawan nasihat","tidak peduli"],e:"Berbakti = taat, hormat, dan sayang."},
+{n:26,m:B,q:"Contoh berbakti kepada orang tua adalah …",o:["membantu ibu membersihkan rumah","membentak ayah","pulang tanpa izin","menyembunyikan nilai jelek"],e:"Membantu pekerjaan orang tua adalah berbakti."},
+{n:27,m:B,q:"Ketika ibu menasihati kita, sikap yang tepat adalah …",o:["mendengarkan dan menurutinya","pura-pura tidak dengar","menjawab dengan keras","pergi meninggalkan ibu"],e:"Kita dengarkan dan taati nasihat baik."},
+{n:28,m:B,q:"Perilaku yang tidak sesuai dengan berbakti kepada orang tua adalah …",o:["membantah dan berkata kasar","mencium tangan orang tua","mendoakan orang tua","meminta izin"],e:"Berkata kasar tidak boleh kepada orang tua."},
+{n:29,m:B,q:"Kita harus menghormati dan menyayangi orang tua karena …",o:["mereka merawat dan mendidik kita","mereka punya banyak uang","agar diberi hadiah","takut dimarahi"],e:"Orang tua merawat dan mendidik kita."},
+{n:30,m:B,q:"Ibu membawa belanjaan berat. Tindakan yang tepat adalah …",o:["membantu membawakannya","menonton TV","pura-pura tidur","pergi bermain"],e:"Kita membantu orang tua yang butuh bantuan."},
+{n:31,m:B,q:"Berbakti kepada guru artinya …",o:["menghormati dan menaati guru","menakuti guru","menghindari guru","mengejek guru"],e:"Berbakti kepada guru = hormat dan taat."},
+{n:32,m:B,q:"Contoh menghormati guru di sekolah adalah …",o:["menyapa dan memberi salam","lewat tanpa menyapa","memanggil dengan kasar","menertawakan guru"],e:"Menyapa dan salam adalah sikap hormat."},
+{n:33,m:B,q:"Guru sedang menjelaskan pelajaran. Sikap yang tepat adalah …",o:["mendengarkan dan mencatat","mengobrol","berjalan-jalan","bermain"],e:"Kita memperhatikan penjelasan guru."},
+{n:34,m:B,q:"Perilaku yang tidak menghormati guru adalah …",o:["berbicara kasar kepada guru","mengucapkan terima kasih","mengerjakan tugas","duduk rapi"],e:"Berbicara kasar tidak menghormati guru."},
+{n:35,m:B,q:"Manfaat menghormati dan menaati guru adalah …",o:["ilmu menjadi berkah dan mudah dipahami","mendapat uang","tidak perlu belajar","bebas dari tugas"],e:"Ilmu jadi berkah dan mudah dipahami."},
+{n:36,m:F,q:"Kejahatan yang disebutkan dalam Q.S. Al-Falaq adalah …",o:["kejahatan makhluk, malam gelap, tukang sihir, dan orang dengki","mencuri, berbohong, dan malas","kejahatan hewan dan tumbuhan","kejahatan siang hari saja"],e:"Ada empat kejahatan pada ayat 2–5."},
+{n:37,m:F,q:"Saat mendapat kesulitan, seorang muslim berlindung dan memohon pertolongan kepada …",o:["Allah Swt.","dukun","jin","benda keramat"],e:"Hanya kepada Allah kita memohon pertolongan."},
+{n:38,m:F,q:"Cara menjauhi sifat dengki adalah …",o:["ikut senang atas keberhasilan teman","iri pada teman yang juara","menjelekkan teman","merusak barang teman"],e:"Dengki dijauhi dengan ikut bahagia."},
+{n:39,m:K,q:"Al-Wahhab artinya …",o:["Maha Pemberi","Maha Besar","Maha Pengasih","Maha Melihat"],e:"Al-Wahhab = Maha Pemberi."},
+{n:40,m:K,q:"Al-Kabir artinya …",o:["Maha Besar","Maha Pemberi","Maha Kuasa","Maha Kaya"],e:"Al-Kabir = Maha Besar."},
+{n:41,m:K,q:"Perilaku yang mencerminkan pengamalan Al-Wahhab dan Al-Kabir adalah …",o:["suka memberi kepada teman dan tidak sombong","pelit dan sombong","meminta terus tanpa terima kasih","merasa paling hebat"],e:"Meneladani: suka memberi dan rendah hati."},
+{n:42,m:K,q:"Kita yakin Allah Maha Pemberi dan Maha Besar. Sikap yang tepat adalah …",o:["berdoa dan bersyukur kepada Allah","meminta kepada selain Allah","putus asa","sombong"],e:"Iman terlihat dari doa dan syukur."},
+{n:43,m:B,q:"Menghormati orang lain artinya …",o:["menghargai dan bersikap sopan","mengejek","mengabaikan","membeda-bedakan"],e:"Menghormati = menghargai dan sopan."},
+{n:44,m:B,q:"Contoh sikap menghormati keluarga dan teman adalah …",o:["berbicara sopan dan tidak mengejek","memotong pembicaraan","membentak adik","merebut mainan"],e:"Bicara sopan adalah sikap hormat."},
+{n:45,m:B,q:"Pendapatmu berbeda dengan temanmu. Sikap yang tepat adalah …",o:["mendengarkan dan menghargai pendapatnya","memaksakan pendapat","marah lalu pergi","mengejeknya"],e:"Perbedaan pendapat dihargai."},
+{n:46,m:F,q:"Rani takut saat malam gelap. Perilaku yang sesuai kandungan Q.S. Al-Falaq adalah …",o:["membaca Al-Falaq dan berlindung kepada Allah","memakai jimat","menangis saja","mencari dukun"],e:"Al-Falaq mengajarkan berlindung kepada Allah."},
+{n:47,m:F,q:"Pesan utama Q.S. Al-Falaq ayat 1–5 adalah …",o:["memohon perlindungan hanya kepada Allah Swt.","menyembah selain Allah","takut kepada makhluk","memilih-milih teman"],e:"Pesan utamanya: berlindung kepada Allah."},
+{n:48,m:K,q:"Ani mendapat nilai bagus. Sikap yang mencerminkan imannya kepada Allah Al-Wahhab adalah …",o:["mengucap syukur kepada Allah","menyombongkan diri","tidak berterima kasih","menyalahkan teman"],e:"Karunia Allah disyukuri."},
+{n:49,m:K,q:"Pernyataan yang tepat tentang sifat wajib Allah adalah …",o:["pasti ada pada Allah dan tidak mungkin tidak ada","boleh ada atau tidak ada","tidak mungkin ada pada Allah","dimiliki manusia dan Allah"],e:"Sifat wajib pasti ada pada Allah."},
+{n:50,m:B,q:"Perilaku yang mencerminkan sikap menghormati orang lain adalah …",o:["mengucapkan terima kasih dan meminta maaf","menyela pembicaraan","memberi julukan buruk","tidak menyapa"],e:"Terima kasih dan maaf tanda hormat."}],
+pjok:[
+{n:1,m:L,q:"Gerak lokomotor adalah gerak yang …",o:["berpindah tempat","tetap di tempat","hanya memakai alat","dilakukan sambil berbaring"],e:"Lokomotor: tubuh berpindah tempat."},
+{n:2,m:L,q:"Dalam permainan kejar-kejaran, gerak lokomotor yang tepat untuk menangkap teman adalah …",o:["berlari","membungkuk","memutar badan","meregangkan tangan"],e:"Berlari membuat tubuh berpindah dengan cepat."},
+{n:3,m:L,q:"Teknik dasar saat berlari yang benar adalah …",o:["badan condong ke depan, lengan diayun bergantian","badan condong ke belakang","tangan diam di samping","kaki diseret"],e:"Badan condong ke depan dan lengan diayun."},
+{n:4,m:L,q:"Perbedaan melompat dan meloncat adalah …",o:["melompat bertumpu satu kaki, meloncat bertumpu dua kaki","keduanya sama","melompat dua kaki, meloncat satu kaki","melompat memakai tangan"],e:"Melompat: tolak satu kaki. Meloncat: tolak dan mendarat dua kaki."},
+{n:5,m:L,q:"Agar dapat melewati rintangan kecil sambil berlari, kombinasi gerakan yang tepat adalah …",o:["berlari lalu melompat","berdiri lalu duduk","memutar badan lalu berhenti","meregang lalu diam"],e:"Berlari lalu melompat efisien untuk melewati rintangan."},
+{n:6,m:L,q:"Gerakan kaki melangkah bergantian dengan salah satu kaki selalu menapak tanah disebut …",o:["berjalan","berlari","meloncat","melompat"],e:"Saat berjalan, salah satu kaki selalu menapak."},
+{n:7,m:N,q:"Gerak nonlokomotor adalah gerak yang dilakukan …",o:["di tempat tanpa berpindah","dengan berpindah tempat","hanya saat berlari","hanya memakai bola"],e:"Nonlokomotor: gerak di tempat."},
+{n:8,m:N,q:"Yang termasuk gerak nonlokomotor adalah …",o:["mengayun lengan","berlari","berjalan","meloncat"],e:"Mengayun lengan dilakukan tanpa berpindah tempat."},
+{n:9,m:N,q:"Manfaat kombinasi gerak membungkuk lalu meregang adalah …",o:["melatih kelenturan tubuh","melatih kecepatan lari","melatih menangkap bola","melatih menendang"],e:"Membungkuk dan meregang melenturkan tubuh."},
+{n:10,m:N,q:"Mengangkat tangan, membungkuk, lalu memutar badan tanpa berpindah tempat adalah kombinasi gerak …",o:["nonlokomotor","lokomotor","manipulatif","permainan"],e:"Semua gerakan dilakukan di tempat."},
+{n:11,m:N,q:"Saat berdiri satu kaki dengan kedua tangan direntangkan, yang menjaga keseimbangan adalah …",o:["kaki tumpu dan kedua tangan","hanya mata","hanya telinga","hanya kepala"],e:"Kaki tumpu dan tangan menjaga keseimbangan."},
+{n:12,m:N,q:"Gerak nonlokomotor penting bagi kesehatan karena …",o:["melenturkan otot dan sendi","membuat tubuh lelah terus","membuat kita tidak bergerak","menambah berat badan"],e:"Otot dan sendi jadi lentur."},
+{n:13,m:M,q:"Contoh gerak dasar manipulatif adalah …",o:["melempar bola","berlari","membungkuk","berjalan"],e:"Manipulatif: memainkan atau mengendalikan benda."},
+{n:14,m:M,q:"Menendang, memukul, dan menangkap bola termasuk gerak dasar …",o:["manipulatif","lokomotor","nonlokomotor","statis"],e:"Semuanya mengendalikan bola."},
+{n:15,m:M,q:"Teknik yang benar saat menangkap bola adalah …",o:["mata melihat bola dan kedua tangan siap di depan","mata terpejam","tangan di belakang","membelakangi bola"],e:"Lihat bola dan siapkan tangan."},
+{n:16,m:M,q:"Jika kaki mengenai bagian bawah bola saat menendang, bola akan …",o:["melambung ke atas","menggelinding rendah","tidak bergerak","berbalik ke belakang"],e:"Bagian bawah bola membuatnya melambung."},
+{n:17,m:M,q:"Cara menggiring bola yang efektif adalah …",o:["menyentuh bola pelan agar tetap dekat kaki","menendang sekuat tenaga","menginjak bola","memegang bola"],e:"Sentuhan pelan menjaga bola tetap dekat."},
+{n:18,m:M,q:"Semakin besar tenaga saat melempar bola, bola akan …",o:["melaju semakin jauh","berhenti","jatuh dekat","berbalik arah"],e:"Tenaga besar membuat bola melaju jauh."},
+{n:19,m:D,q:"Anak berguling ke depan di atas matras. Gerak dominannya adalah …",o:["berguling","melompat","melempar","menendang"],e:"Guling depan adalah gerak berguling."},
+{n:20,m:D,q:"Teknik pendaratan yang aman dalam senam adalah …",o:["kedua kaki mendarat bersama dengan lutut ditekuk","mendarat dengan lutut lurus","mendarat dengan tangan","mendarat sambil memejamkan mata"],e:"Lutut ditekuk untuk meredam hentakan."},
+{n:21,m:D,q:"Saat guling depan, bagian tubuh yang menyentuh matras pertama kali adalah …",o:["kedua tangan","pantat","kaki","perut"],e:"Urutan: tangan, tengkuk, punggung, pinggul, kaki."},
+{n:22,m:D,q:"Kombinasi gerak yang tepat saat meloncat adalah …",o:["bertolak dua kaki, melayang, mendarat dua kaki","bertolak satu kaki, mendarat satu kaki","berdiri diam","menggulingkan badan"],e:"Meloncat: tolak, melayang, mendarat dengan dua kaki."},
+{n:23,m:D,q:"Pada sikap lilin, tangan berfungsi …",o:["menyangga pinggang","memegang bola","mendorong matras","menutup mata"],e:"Tangan menyangga pinggang agar posisi stabil."},
+{n:24,m:D,q:"Latihan bertumpu pada kedua tangan seperti sikap push-up melatih otot …",o:["lengan dan dada","mata","telinga","gigi"],e:"Bertumpu tangan menguatkan lengan dan dada."},
+{n:25,m:D,q:"Keselamatan dalam senam penting agar …",o:["terhindar dari cedera","cepat selesai","selalu menang","tidak berkeringat"],e:"Keselamatan mencegah cedera."},
+{n:26,m:L,q:"Gerak bertolak dan mendarat dengan dua kaki disebut …",o:["meloncat","melompat","berjalan","merayap"],e:"Meloncat memakai dua kaki."},
+{n:27,m:L,q:"Saat berlari, pandangan mata menghadap …",o:["ke depan","ke belakang","ke bawah","ke samping"],e:"Pandangan ke depan agar lari lurus dan aman."},
+{n:28,m:N,q:"Menggeleng-gelengkan kepala termasuk gerak dasar …",o:["nonlokomotor","lokomotor","manipulatif","statis"],e:"Gerak di tempat = nonlokomotor."},
+{n:29,m:N,q:"Memutar badan sambil mengayun lengan terdiri dari dua unsur gerak, yaitu …",o:["memutar dan mengayun","berlari dan melompat","menendang dan melempar","berjalan dan merayap"],e:"Unsurnya memutar dan mengayun."},
+{n:30,m:M,q:"Alat yang digunakan pada aktivitas melempar dan menangkap adalah …",o:["bola","matras","tiang","tali panjat"],e:"Melempar dan menangkap memakai bola."},
+{n:31,m:M,q:"Saat menendang bola, pandangan mata tertuju pada …",o:["bola","langit","teman","penonton"],e:"Mata melihat bola agar tendangan tepat."},
+{n:32,m:M,q:"Menendang dengan punggung kaki bertujuan agar bola …",o:["melaju kencang dan jauh","berhenti","berputar di tempat","masuk ke tanah"],e:"Punggung kaki menghasilkan tendangan keras."},
+{n:33,m:D,q:"Peralatan yang digunakan pada senam lantai adalah …",o:["matras","raket","bola sepak","tali"],e:"Senam lantai memakai matras."},
+{n:34,m:D,q:"Saat berguling ke depan, posisi kepala yang tepat adalah …",o:["menunduk dan dagu dirapatkan ke dada","menengadah","menoleh ke samping","mendongak ke atas"],e:"Kepala menunduk agar aman."},
+{n:35,m:D,q:"Berjalan di atas balok titian termasuk keseimbangan …",o:["dinamis","statis","diam","kaku"],e:"Keseimbangan sambil bergerak = dinamis."},
+{n:36,m:L,q:"Berlari, melompat, dan berjalan adalah variasi gerak lokomotor. Manfaatnya bagi kesehatan adalah …",o:["menguatkan jantung, paru-paru, dan otot kaki","melemahkan otot","menambah rasa malas","membuat mudah sakit"],e:"Gerak lokomotor menyehatkan jantung, paru-paru, dan otot."},
+{n:37,m:N,q:"Contoh gerak nonlokomotor dan fungsinya yang tepat adalah …",o:["membungkuk untuk melenturkan tubuh","berlari untuk melenturkan tubuh","menendang untuk berdiam","berjalan untuk menangkap bola"],e:"Membungkuk melenturkan tubuh."},
+{n:38,m:M,q:"Contoh gerak manipulatif dan manfaatnya yang tepat adalah …",o:["menangkap bola melatih koordinasi mata dan tangan","berlari melatih koordinasi mata dan tangan","membungkuk melatih menendang","berjalan melatih melempar"],e:"Menangkap bola melatih koordinasi mata dan tangan."},
+{n:39,m:D,q:"Urutan gerakan sikap lilin yang benar adalah …",o:["berbaring telentang, angkat kaki dan pinggul ke atas, tangan menyangga pinggang","berdiri, melompat, lalu berlari","tengkurap dengan tangan di depan","duduk, menunduk, lalu berdiri"],e:"Berbaring, angkat pinggul dan kaki, tangan menyangga."},
+{n:40,m:D,q:"Sebelum senam, pemanasan penting agar …",o:["otot siap dan terhindar dari cedera","cepat lelah","badan kaku","tidak perlu bergerak"],e:"Persiapan fisik menyiapkan otot dan mencegah cedera."}]};
+let S=null,timer=null,nama=store.get('ats3_nama')||'',mode='latihan';
+const fmt=s=>String(s/60|0).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function home(){clearInterval(timer);S=null;const h=(store.get('ats3_h')||[]).slice(-5).reverse();
+A.innerHTML=`<h1>Asisten Belajar ATS Ganjil</h1><small>Kelas 3 SD · TP 2026/2027 · urut sesuai jadwal ujian</small>
+<section class="card"><label>Nama peserta<input id="nm" value="${esc(nama)}" placeholder="Tulis namamu"></label>
+<div class="seg"><button data-m="latihan" class="${mode=='latihan'?'on':''}">Latihan: pembahasan langsung</button><button data-m="simulasi" class="${mode=='simulasi'?'on':''}">Simulasi ujian: pakai timer</button></div></section>
+${SCHED.map((d,i)=>`<section class="card"><h2>Hari ${i+1}: ${d[0]}</h2>${d[1].map(([k,n,w])=>`<div class="row"><div><b>${n}</b><small>Jam ${w}</small></div>${BANK[k]?`<button class="go" data-k="${k}">Mulai (${BANK[k].length} soal)</button>`:'<span class="soon">Segera hadir</span>'}</div>`).join('')}</section>`).join('')}
+${h.length?`<section class="card"><h2>Riwayat terakhir</h2>${h.map(x=>`<div class="row"><span>${esc(x.n)} · ${x.md}<small>${x.t}</small></span><b>${x.s}</b></div>`).join('')}</section>`:''}`}
+function begin(k,idx){const qs=idx.map(i=>{const q=BANK[k][i],o=shuf(q.o.map((t,j)=>[t,j==0]));return{id:i,n:q.n,m:q.m,q:q.q,e:q.e,o:o.map(x=>x[0]),c:o.findIndex(x=>x[1])}});
+S={k,qs,a:qs.map(()=>-1),f:qs.map(()=>0),i:0,ask:0,fin:0,left:qs.length*90};clearInterval(timer);
+if(mode=='simulasi')timer=setInterval(()=>{S.left--;if(S.left<=0)finish();else if($('#tm'))$('#tm').textContent=fmt(S.left)},1000);quiz()}
+function quiz(){const q=S.qs[S.i],lat=mode=='latihan',an=S.a[S.i],done=lat&&an>=0,last=S.i==S.qs.length-1,blank=S.a.filter(x=>x<0).length;
+A.innerHTML=`<div class="bar"><div><b>${esc(nama)}</b><small>${MPN[S.k]}</small></div>${lat?'':`<div class="tm" id="tm" aria-label="Sisa waktu">${fmt(S.left)}</div>`}</div>
+<div class="pal">${S.qs.map((_,i)=>`<button data-p="${i}" aria-label="Soal ${i+1}" class="${i==S.i?'cur ':''}${S.f[i]?'flag':S.a[i]>=0?'ans':''}">${i+1}</button>`).join('')}</div>
+<section class="card"><small>Soal ${S.i+1} dari ${S.qs.length} · ${q.m}${q.n?" · No. "+q.n+" kisi-kisi":""}</small><p class="q">${q.q}</p>
+${q.o.map((t,j)=>`<button class="opt ${an==j?'sel':''} ${done?(j==q.c?'ok':an==j?'bad':''):''}" data-o="${j}" ${done?'disabled':''}><i>${'ABCD'[j]}</i><span>${t}</span></button>`).join('')}
+${done?`<div class="fb ${an==q.c?'ok':'bad'}"><b>${an==q.c?'Benar, hebat!':'Belum tepat.'}</b> ${q.e}</div>`:''}</section>
+${S.ask?`<div class="ask"><b>Selesaikan ujian?</b><p>${blank?blank+' soal belum dijawab.':'Semua soal sudah dijawab.'}</p><div class="nav"><button data-x="no">Kembali</button><button class="go" data-x="yes">Ya, selesai</button></div></div>`:
+`<div class="nav"><button data-n="-1" ${S.i?'':'disabled'}>Sebelumnya</button>${lat?'':`<button data-fl="1">${S.f[S.i]?'Batal ragu':'Ragu-ragu'}</button>`}${last?'<button class="go" data-x="ask">Selesai</button>':'<button class="go" data-n="1">Berikutnya</button>'}</div>`}`}
+function finish(){if(S.fin)return;S.fin=1;clearInterval(timer);const b=S.qs.filter((q,i)=>S.a[i]==q.c).length,s=Math.round(b/S.qs.length*100),h=store.get('ats3_h')||[];
+h.push({n:MPN[S.k],md:mode=='latihan'?'Latihan':'Simulasi',s,t:new Date().toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'})});store.set('ats3_h',h.slice(-30));result()}
+function result(){const n=S.qs.length,b=S.qs.filter((q,i)=>S.a[i]==q.c).length,k=S.a.filter(x=>x<0).length,s=Math.round(b/n*100),per={};
+S.qs.forEach((q,i)=>{const p=per[q.m]=per[q.m]||[0,0];p[1]++;if(S.a[i]==q.c)p[0]++});
+const msg=s>=80?'Hebat sekali, terus pertahankan!':s>=60?'Bagus! Sedikit lagi, ayo ulangi bagian yang belum tepat.':'Tidak apa-apa, belajar itu bertahap. Yuk coba lagi pelan-pelan.';
+A.innerHTML=`<h1>Hasil ${MPN[S.k]}</h1><section class="card"><div class="score">${s}</div><p>${esc(nama)}: ${b} benar, ${n-b-k} salah, ${k} kosong. ${msg}</p></section>
+<section class="card"><h2>Penguasaan per materi</h2>${Object.entries(per).map(([m,[x,y]])=>`<div class="m"><small>${m}: ${x} dari ${y}</small><div><span style="width:${x/y*100}%"></span></div></div>`).join('')}</section>
+<div class="nav">${b<n?'<button class="go" data-x="redo">Ulangi soal yang salah</button>':''}<button data-x="home">Beranda</button></div>
+<section class="card"><h2>Pembahasan</h2>${S.qs.map((q,i)=>{const ok=S.a[i]==q.c;return`<div class="rv"><small>Soal ${i+1} · ${q.m}</small><div>${q.q}</div><div><span class="tag ${ok?'ok':'bad'}">${ok?'Benar':S.a[i]<0?'Kosong':'Salah'}</span> Jawaban benar: ${'ABCD'[q.c]}. ${q.o[q.c]}</div><small>${q.e}</small></div>`}).join('')}</section>`}
+const A=$('#app');
+A.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const d=t.dataset;
+if(d.m){nama=$('#nm').value;mode=d.m;home()}
+else if(d.k){nama=($('#nm').value||'').trim()||'Peserta';store.set('ats3_nama',nama);begin(d.k,BANK[d.k].map((_,i)=>i))}
+else if(d.p){S.i=+d.p;quiz()}
+else if(d.o!==undefined)pick(+d.o)
+else if(d.n){S.i+=+d.n;quiz()}
+else if(d.fl){S.f[S.i]^=1;quiz()}
+else if(d.x=='ask'){S.ask=1;quiz()}else if(d.x=='no'){S.ask=0;quiz()}
+else if(d.x=='yes')finish();
+else if(d.x=='redo'){mode='latihan';begin(S.k,S.qs.filter((q,i)=>S.a[i]!=q.c).map(q=>q.id))}
+else if(d.x=='home')home()});
+function pick(j){if(mode=='latihan'&&S.a[S.i]>=0)return;S.a[S.i]=j;quiz()}
+document.addEventListener('keydown',e=>{if(!S||S.fin||e.target.tagName=='INPUT')return;const k=e.key.toUpperCase(),n='1234'.indexOf(k)>=0?+k-1:'ABCD'.indexOf(k);
+if(n>=0&&n<4&&S.qs[S.i].o[n]!==undefined)pick(n);else if(e.key=='ArrowRight'&&S.i<S.qs.length-1){S.i++;quiz()}else if(e.key=='ArrowLeft'&&S.i>0){S.i--;quiz()}});
+home();
+</script></body></html>
